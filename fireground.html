@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>360°走火場情景游戲</title>
+    <meta name="description" content="360° Image - A-Frame">
+    <link rel="stylesheet" href="css/fireground/firground.css">
+    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@9b8609bd84a292ef97bf1e8589401ae0d3201280/dist/aframe-master.min.js"></script>
+</head>
+
+<body>
+    <!--模擬黑烟-->>
+    <div id="gradient-layer"></div>
+    <!--提示hints-->
+    <div id="emergency-exit">尋找周圍的緊急出口</div>
+    <img src="media/image/wet towel.png" id="bottom-photo">
+    <a-scene>
+        <!--緩衝media文件-->>
+        <a-assets>
+            <img id="mallImage" src="css/fireground/shopping-mall.jpg">
+            <a-asset-item id="exit_box" src="media/3d/exit_box/scene.gltf"></a-asset-item>
+            <a-asset-item id="mini_market" src="media/3d/mini_market/scene.gltf"></a-asset-item>
+        </a-assets>
+        <a-camera position="0 1.6 0">
+            <a-cursor
+                id="cursor"
+                raycaster="objects: .clickable; near: 0; far: 10"
+                material="color: transparent; opacity: 0; shader: flat"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03">
+            </a-cursor>
+        </a-camera>
+        <a-sky src="#mallImage" rotation="0 -130 0"></a-sky>
+        <a-entity gltf-model="#exit_box" position="0 1.5 -3"></a-entity>
+        <a-entity gltf-model="#mini_market" position="0 1.5 -3"></a-entity>
+
+        <a-circle id="trigger1" position="0 1.5 -3" radius="0.1" color="red" clickable></a-circle>
+        <a-circle id="trigger2" position="0 1.5 -5" radius="0.1" color="red" clickable></a-circle>
+    </a-scene>
+</body>
+
+</html>
