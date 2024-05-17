@@ -16,7 +16,12 @@
     <!--提示hints-->
     <div id="emergency-exit">尋找周圍的緊急出口</div>
     <img src="media/image/wet towel.png" id="bottom-photo">
-    <a-scene>
+    <!-- 倒計時和GIF顯示 -->
+    <div id="countdown-timer">90</div>
+    <div id="full-screen-gif" style="display: none;">
+        <img src="path_to_your_gif.gif" style="width: 100%; height: 100%;">
+    </div>
+    <a-scene cursor="rayOrigin: mouse">
         <!--緩衝media文件-->
         <a-assets>
             <!--選擇游戲問題及答案-->
@@ -31,7 +36,7 @@
         <a-sky src="#mallImage" rotation="0 -150 0"></a-sky>
         <a-entity gltf-model="#mini_market" position="0 0 0"></a-entity>
         <!--選擇游戲圖片-->
-        <a-entity rotation="0 -45 0"> <!-- 向右轉30度 -->
+        <a-entity rotation="0 -50 0"> <!-- 向右轉30度 -->
             <a-camera position="-13 5 10">
                 <a-cursor
                     id="cursor"
@@ -40,9 +45,9 @@
                 </a-cursor>
             </a-camera>
             <!-- 選擇游戲圖片 -->
-            <a-image src="#quetion" position="-12 5.5 4" scale="7 1.5 2"></a-image>
-            <a-image class="clickable exit-clickable" src="#exit" rotation="0 5 0" position="-13.5 3 4.5" scale="2 2 2"></a-image>
-            <a-image class="clickable window-clickable" src="#window" rotation="0 -5 0" position="-10.5 3 4.5" scale="2 2 2"></a-image>
+            <a-image src="#quetion" position="-13 6.5 4" scale="7 1.5 2"></a-image>
+            <a-image class="clickable exit-clickable" src="#exit" rotation="0 5 0" position="-15 4 4.5" scale="2 2 2"></a-image>
+            <a-image class="clickable window-clickable" src="#window" rotation="0 -5 0" position="-11 4 4.5" scale="2 2 2"></a-image>
         </a-entity>    
     </a-scene>
 </body>
